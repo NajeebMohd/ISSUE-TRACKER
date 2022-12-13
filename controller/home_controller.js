@@ -4,8 +4,3 @@ module.exports.home = function(req,res){
         title : 'Home Page'
     });
 }
-module.exports.SignUp = function(req,res){
-    return res.render('sign_up',{
-        title : 'Sign Up'
-    })
-}
