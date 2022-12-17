@@ -1,5 +1,4 @@
-module.exports.home = function(req,res){
-    res.cookie('_id',44);
+module.exports.home = function(req,res){    
     return res.render('home',{
         title : 'Home Page'
     });
