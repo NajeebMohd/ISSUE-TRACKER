@@ -1,3 +1,39 @@
 <link rel="stylesheet" href="/css/preview.css">
 
-<h1> in the secure page </h1>
+<div id = "container">
+    <form action="" method="post" id = "form-of-project">
+
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Name of Project</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Project Name" name = "projectName" required>
+        </div>
+        
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Author</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Author name" name = "author" required>
+        </div>
+        
+        <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Discription</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="discripttin"></textarea>
+        </div>
+    
+        <button type="submit" class="btn btn-primary col-4">Create Project</button>
+    </form>
+    <div id = "project-lists">
+        <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              A list item
+              <span class="badge bg-primary rounded-pill">14</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              A second list item
+              <span class="badge bg-primary rounded-pill">2</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              A third list item
+              <span class="badge bg-primary rounded-pill">1</span>
+            </li>
+        </ul>
+    </div>
+</div>

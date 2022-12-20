@@ -6,7 +6,7 @@ const expressLayouts = require('express-ejs-layouts');
 const db = require('./config/mongoose');
 const session = require('express-session');
 const passport = require('passport');
-const passportLocal = require('./config/passport-local-strategy.js');
+const passportLocal = require('./config/passport-local-strategy');
 
 
 app.use(expressLayouts);
@@ -18,6 +18,13 @@ app.set('layout extractScripts', true);
 
 app.use(express.urlencoded());
 
+
+
+app.use(express.static('assets'));
+app.set('view engine', 'ejs');
+app.set('views','./views');// ? why we have to use app.set views after the app . use session
+
+
 app.use(session({
     name : 'issue tracker',
     secret : 'issyou',
@@ -27,11 +34,6 @@ app.use(session({
         maxAge : (1000 * 60 * 10)
     }
 }));
-
-app.use(express.static('assets'));
-app.set('view engine', 'ejs');
-app.set('views','./views');// ? why we have to use app.set views after the app . use session
-
 
 app.use(passport.initialize());
 app.use(passport.session());

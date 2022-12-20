@@ -1,0 +1,17 @@
+#container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    
+}
+#form-of-project{
+    height: 40%;
+    width: 40%;
+}
+#project-lists{
+    height: auto;
+    width: 45%;
+    margin-top: 5%;
+}

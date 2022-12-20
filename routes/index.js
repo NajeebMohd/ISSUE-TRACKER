@@ -12,7 +12,4 @@ router.use('/users',require('./user.js'));
 router.get('/',HomeController.home);
 
 
-
-
-
 module.exports = router;

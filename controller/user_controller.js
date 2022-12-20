@@ -5,6 +5,11 @@ module.exports.SignUp = function(req,res){
         title : 'Sign Up'
     });
 }
+module.exports.Preview = function(req,res){
+    return res.render('preview',{
+        title : "Projects"
+    });
+}
 
 module.exports.create = function(req,res){
     console.log(req.body);
@@ -23,9 +28,6 @@ module.exports.create = function(req,res){
     });
 }
 
-module.exports.CreateSession = function(req,res){
-    console.log('in the user controller...');
-    return res.render('preview',{
-        title : "Projects"
-    });
+module.exports.CreateSession = function(req,res){    
+    return res.redirect('/users/preview');
 }

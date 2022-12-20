@@ -5,10 +5,10 @@ const User = require('../models/user');
 
 passport.use(new localStrategy({
         usernameField : 'email',
-        passReqToCallback : true
+        //passReqToCallback : true
     },
-    function(req,email,password,done){
-        console.log('.......    ',req);
+    function(email,password,done){
+        console.log('wait... Authenticating!!!');        
         User.findOne({email : email},function(err,user){
             if(err){
                 console.log('error in finding the user...-->> ',err);
@@ -24,26 +24,29 @@ passport.use(new localStrategy({
 ));
 
 passport.serializeUser(function(user,done){
-    console.log('in serialixe');
+    console.log('in serialixe...');
     done(null,user.id);
 });
 
 passport.deserializeUser(function(id,done){
-    console.log('in deserialixe');
+    console.log('in deserialixe...');
     User.findById(id,function(err,user){
-        if(err){console.log('error in deserializing user -->>',err);return;}
+        if(err){
+            console.log('error in deserializing user -->>',err);
+            return done(err);
+        }
         return done(null,user);
     });
 });
 
 passport.checkAuthentication = function(req,res,next){
-    console.log('att 11....');
+    console.log('checking authenticating...');
     if(req.isAuthenticated()) return next();
-    return res.redirect('back');
+    return res.redirect('/');
 }
 passport.setAuthenticatedUser = function(req,res,next){
-    console.log('at 222');
-    if(req.isAuthenticated()) res.locals.user = req.user;
+    console.log('setting authenticating...');    
+    if(req.isAuthenticated()) res.locals.user = req.user;    
     next();
 }
 

@@ -1,20 +1,20 @@
 <link rel = "stylesheet" href = "/css/home.css">
 
 
-
 <div id = "home-container">
     
     <div id = "sign-in-container">
         <h1>Login To Your Account </h1>
         <form method="post" action="/users/create-session">
+
             <div class="col-sm-8 col-mb-7">
               <label for="exampleInputEmail1" class="form-label">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name = "email" required placeholder="xyz@gmail.com">
               <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
             </div>
             <div class="col-sm-8 col-mb-7">
               <label for="exampleInputPassword1" class="form-label">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1">
+              <input type="password" class="form-control" id="exampleInputPassword1" name = "password" required placeholder="Enter Password">
             </div>
             
             <button type="submit" class="btn btn-primary col-4">Submit</button>
