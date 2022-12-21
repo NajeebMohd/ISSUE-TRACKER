@@ -1,4 +1,5 @@
 const User = require('../models/user.js');
+const Project = require('../models/project.js');
 
 module.exports.SignUp = function(req,res){
     return res.render('sign_up',{
@@ -6,8 +7,12 @@ module.exports.SignUp = function(req,res){
     });
 }
 module.exports.Preview = function(req,res){
-    return res.render('preview',{
-        title : "Projects"
+    Project.find({},function(err,project){
+        if(err){console.log('err finding the list of projects -->> ',err);return;}
+        return res.render('preview',{
+            title : "Projects",
+            projects : project       
+        });
     });
 }
 

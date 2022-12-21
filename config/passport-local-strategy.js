@@ -7,8 +7,7 @@ passport.use(new localStrategy({
         usernameField : 'email',
         //passReqToCallback : true
     },
-    function(email,password,done){
-        console.log('wait... Authenticating!!!');        
+    function(email,password,done){               
         User.findOne({email : email},function(err,user){
             if(err){
                 console.log('error in finding the user...-->> ',err);
@@ -23,13 +22,11 @@ passport.use(new localStrategy({
     }
 ));
 
-passport.serializeUser(function(user,done){
-    console.log('in serialixe...');
+passport.serializeUser(function(user,done){    
     done(null,user.id);
 });
 
-passport.deserializeUser(function(id,done){
-    console.log('in deserialixe...');
+passport.deserializeUser(function(id,done){    
     User.findById(id,function(err,user){
         if(err){
             console.log('error in deserializing user -->>',err);
@@ -39,13 +36,11 @@ passport.deserializeUser(function(id,done){
     });
 });
 
-passport.checkAuthentication = function(req,res,next){
-    console.log('checking authenticating...');
+passport.checkAuthentication = function(req,res,next){    
     if(req.isAuthenticated()) return next();
     return res.redirect('/');
 }
-passport.setAuthenticatedUser = function(req,res,next){
-    console.log('setting authenticating...');    
+passport.setAuthenticatedUser = function(req,res,next){        
     if(req.isAuthenticated()) res.locals.user = req.user;    
     next();
 }

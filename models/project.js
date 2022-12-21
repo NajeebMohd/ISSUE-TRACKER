@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 const projectSchema = new mongoose.Schema({
     ProjectName : {
         type : String,
-        required : true
+        required : true,
+        unique : true
     },
     author : {
         type : String,

@@ -7,7 +7,7 @@ const HomeController = require('../controller/home_controller');
 
 
 router.use('/users',require('./user.js'));
-
+router.use('/project',require('./project.js'));
 
 router.get('/',HomeController.home);
 
