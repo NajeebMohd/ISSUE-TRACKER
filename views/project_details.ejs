@@ -9,8 +9,27 @@
         <p><%= project.discription %><span> (Done By)------------  <b><%= project.author %></b></span></p>
         
     </div>
+    
 
-    <form>
-        
+    <form action="/issues/create-issue" method="post" id = "form-of-issues">
+
+      <div class="sm-12 mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Title</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Title For Issues" name = "title" required>
+      </div>
+      
+      <div class="sm-12 mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Author</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Author name" name = "author" required>
+      </div>
+      
+      <div class="sm-12 mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Discription</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="2" name="discription" required></textarea>
+      </div>
+      <input type = "hidden" name = "projectid" value="<%=project._id%>">
+      <button type="submit" class="mb-5 btn btn-primary col-4" >submit</button>
+  
     </form>
+    
 </div>

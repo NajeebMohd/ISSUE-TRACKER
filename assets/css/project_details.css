@@ -9,7 +9,11 @@
 #project-detail{
     min-height: 40%;
     height: auto;
-    width: 40%;
+    width: 70%;
     border: 1px solid black;
     text-align: center;
+}
+#form-of-issues{
+    height: 40%;
+    width: 50%;
 }

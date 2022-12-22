@@ -4,7 +4,12 @@ module.exports.CreateProject = function(req,res){
     Project.findOne({ProjectName:req.body.ProjectName},function(err,project){
         if(err){console.log('error while creating the project -->> ,',err);return;}
         if(!project){
-            Project.create(req.body,function(err,project){
+            Project.create({
+                ProjectName : req.body.ProjectName,
+                author: req.body.author,
+                discription : req.body.discription,
+                user : req.user._id
+            },function(err,project){
                 if(err){console.log('error while creating the project ',err);return;}                        
             });
         }

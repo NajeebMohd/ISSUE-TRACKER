@@ -8,6 +8,7 @@ const HomeController = require('../controller/home_controller');
 
 router.use('/users',require('./user.js'));
 router.use('/project',require('./project.js'));
+router.use('/issues',require('./issue.js'));
 
 router.get('/',HomeController.home);
 
