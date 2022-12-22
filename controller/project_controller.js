@@ -11,3 +11,13 @@ module.exports.CreateProject = function(req,res){
     });
     res.redirect('back');        
 }
+
+module.exports.ProjectDetails = function(req,res){
+    Project.findById(req.params.id,function(err,project){
+        if(err){console.log('error in finding the project -->>',err);return;}
+        res.render('project_details',{
+            title : 'Project Details',
+            project : project
+        });
+    });
+}

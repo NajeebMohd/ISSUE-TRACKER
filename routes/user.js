@@ -16,4 +16,6 @@ router.post('/create-session'
     )
 ,UserController.CreateSession);
 
+router.get('/sign-out',UserController.destroySession);
+
 module.exports = router;

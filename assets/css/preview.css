@@ -9,9 +9,13 @@
 #form-of-project{
     height: 40%;
     width: 40%;
+    /* border: 1px solid black; */
 }
 #project-lists{
     height: auto;
     width: 45%;
     margin-top: 5%;
+}
+#project-lists li:hover{
+    background-color: gray;
 }

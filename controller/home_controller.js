@@ -1,5 +1,7 @@
 module.exports.home = function(req,res){
-    res.cookie('user.id',33);   
+    if(req.isAuthenticated()){
+        res.redirect('/users/preview');
+    }   
     return res.render('home',{
         title : 'Home Page'
     });

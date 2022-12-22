@@ -13,7 +13,12 @@ const projectSchema = new mongoose.Schema({
     discription : {
         type : String,
         required : true
-    }
+    },
+    issues : [
+        
+    ]
+},{
+    timestamps:true
 });
 
 const Project = mongoose.model('Project',projectSchema);

@@ -2,6 +2,9 @@ const User = require('../models/user.js');
 const Project = require('../models/project.js');
 
 module.exports.SignUp = function(req,res){
+    if(req.isAuthenticated()){
+        res.redirect('/users/preview');
+    }
     return res.render('sign_up',{
         title : 'Sign Up'
     });
@@ -35,4 +38,12 @@ module.exports.create = function(req,res){
 
 module.exports.CreateSession = function(req,res){    
     return res.redirect('/users/preview');
+}
+
+module.exports.destroySession = function(req,res){
+    
+    req.logout(function(err) {        
+        if (err) { return next(err); }        
+        res.redirect('/');
+    });   
 }
