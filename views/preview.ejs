@@ -2,23 +2,23 @@
 
 <div id = "container">
   <form action="/project/create-project" method="post" id = "form-of-project">
-
-    <div class="mb-3">
+    <h2>Create A Project</h2>
+    <div class="mb-3 col-10">
       <label for="exampleFormControlInput1" class="form-label">Name of Project</label>
       <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Project Name" name = "ProjectName" required>
     </div>
     
-    <div class="mb-3">
+    <div class="mb-3 col-10">
       <label for="exampleFormControlInput1" class="form-label">Author</label>
       <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Author name" name = "author" required>
     </div>
     
-    <div class="mb-3">
+    <div class="mb-3 col-10">
       <label for="exampleFormControlTextarea1" class="form-label">Discription</label>
       <textarea class="form-control" id="exampleFormControlTextarea1" rows="2" name="discription" required></textarea>
     </div>
 
-    <button type="submit" class="btn btn-primary col-4" >submit</button>
+    <button type="submit" class="btn btn-primary col-4 mb-3" >Create Project</button>
 
   </form>
 
