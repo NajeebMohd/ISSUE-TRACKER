@@ -31,3 +31,15 @@ module.exports.ProjectDetails = function(req,res){
         });
     });
 }
+
+module.exports.SearchProject = function(req,res){   
+    console.log(req.body.type,req.body.search); 
+    const type = req.body.type;
+    Project.findOne({type : req.body.search},function(err,project){
+        if(err){console.log('error in searching the project -->> ',err);return;}
+        if(project){
+            console.log(project);
+        }
+    });
+    res.redirect('back');
+}

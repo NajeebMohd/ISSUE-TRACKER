@@ -2,49 +2,60 @@
 
 
 <div id = "container">
-    <h1>Details Of The Project </h1>
-    <div id = "project-detail">
+    
+  <form id = "project-search" method="post" action="/project/search-project">
+    <select class="form-select" aria-label="Default select example" name = "type">
+      <option selected>Open this to select title or discription to search </option>
+      <option value="ProjectName">title of project</option>
+      <option value="discription">Discription</option>      
+      <option value="author">Author</option>      
+    </select>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="type here to search" name = "search" required>
+    <button type="submit" class="mb-5 btn btn-primary col-3" >submit</button>
+  </form>
 
-        <h1><%= project.ProjectName%></h1>
-        <p><%= project.discription %><span> (Done By)------------  <b><%= project.author %></b></span></p>
-        
+  <div id = "project-detail">
+    <h1>Details Of The Project </h1>
+      <h1><%= project.ProjectName%></h1>
+      <p><%= project.discription %><span> (Done By)------------  <b><%= project.author %></b></span></p>
+      
+  </div>
+
+
+  <form action="/issues/create-issue" method="post" id = "form-of-issues">
+
+    <div class="sm-12 mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Title</label>
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Title For Issues" name = "title" required>
     </div>
     
-
-    <form action="/issues/create-issue" method="post" id = "form-of-issues">
-
-      <div class="sm-12 mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Title</label>
-        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Title For Issues" name = "title" required>
-      </div>
-      
-      <div class="sm-12 mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Author</label>
-        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Author name" name = "author" required>
-      </div>
-      
-      <div class="sm-12 mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label">Discription</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="2" name="discription" required></textarea>
-      </div>
-      <input type = "hidden" name = "projectid" value="<%=project._id%>">
-      <button type="submit" class="mb-5 btn btn-primary col-4" >submit</button>
-  
-    </form>
-
-    <div class="list-group">
-      
-      <% for(issue of project.issues){ %>
-        <a  class="list-group-item list-group-item-action">
-          <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1"><%= issue.title %></h5>
-            <small class="text-muted"><%= issue.updatedAt %></small>
-          </div>
-          <p class="mb-1"><%= issue.discription %></p>
-          <small class="text-muted">issue created by <b>- <%= issue.author %></b> </small>
-        </a>
-      <% } %>
-      
+    <div class="sm-12 mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Author</label>
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Author name" name = "author" required>
     </div>
+    
+    <div class="sm-12 mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label">Discription</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="2" name="discription" required></textarea>
+    </div>
+    <input type = "hidden" name = "projectid" value="<%=project._id%>">
+    <button type="submit" class="mb-5 btn btn-primary col-4" >submit</button>
+
+  </form>
+
+  <div class="list-group">
+    
+    <% for(issue of project.issues){ %>
+      <a  class="list-group-item list-group-item-action">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1"><%= issue.title %></h5>
+          <small class="text-muted"><%= issue.updatedAt %></small>
+        </div>
+        <p class="mb-1"><%= issue.discription %></p>
+        <small class="text-muted">issue created by <b>- <%= issue.author %></b> </small>
+      </a>
+    <% } %>
+    
+  </div>
     
 </div>
