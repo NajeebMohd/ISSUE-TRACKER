@@ -1,3 +1,4 @@
+const { populate } = require('../models/project');
 const Project = require('../models/project');
 
 module.exports.CreateProject = function(req,res){
@@ -17,9 +18,13 @@ module.exports.CreateProject = function(req,res){
     res.redirect('back');        
 }
 
-module.exports.ProjectDetails = function(req,res){
-    Project.findById(req.params.id,function(err,project){
-        if(err){console.log('error in finding the project -->>',err);return;}
+module.exports.ProjectDetails = function(req,res){    
+    Project.findById(req.params.id)
+    .populate({
+        path : 'issues'        
+    })
+    .exec(function(err,project){
+        if(err){console.log('error in finding the project -->>',err);return;}        
         res.render('project_details',{
             title : 'Project Details',
             project : project

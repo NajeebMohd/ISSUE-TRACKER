@@ -2,9 +2,10 @@ const Issue = require('../models/issue');
 const Project = require('../models/project');
 
 module.exports.CreateIssue = function(req,res){
-    Issue.findOne({title : req.body.title},function(err,issue){
-        if(err){console.log('err while creating the issue -->> ',err);return;}
-        if(!issue){
+    console.log(req.body.projectid);
+    Project.findOne({_id : req.body.projectid},function(err,projectData){
+        console.log(projectData);
+        if(projectData){
             Issue.create({
 
                 title : req.body.title,
@@ -14,9 +15,11 @@ module.exports.CreateIssue = function(req,res){
                 project : req.body.projectid
                 
             },function(err,issue){
+                projectData.issues.push(issue);
+                projectData.save();
                 if(err){console.log('error while creating issue -->> ',err);return;}
                 res.redirect('back');
             });
         }
-    });
+    });    
 }
