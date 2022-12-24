@@ -32,14 +32,34 @@ module.exports.ProjectDetails = function(req,res){
     });
 }
 
-module.exports.SearchProject = function(req,res){   
-    console.log(req.body.type,req.body.search); 
-    const type = req.body.type;
-    Project.findOne({type : req.body.search},function(err,project){
-        if(err){console.log('error in searching the project -->> ',err);return;}
-        if(project){
-            console.log(project);
+module.exports.SearchProject = function(req,res){      
+    const type = req.body.type;   
+    
+    Project.findOne({_id : req.body.projectid})
+    .populate(
+        type == 'title' ? {
+            path : 'issues',
+            match :{
+                title : req.body.search
+            }
+        } :  type == 'author' ? {
+            path : 'issues',
+            match :{
+                author : req.body.search
+            }
+        } : {
+            path : 'issues',
+            match : {
+                discription : req.body.search
+            }
         }
+
+    )
+    .exec(function(err,project){
+        if(err){console.log('error in finding the project -->>',err);return;}
+        res.render('project_details',{
+            title : 'Project Details',
+            project : project
+        });        
     });
-    res.redirect('back');
 }

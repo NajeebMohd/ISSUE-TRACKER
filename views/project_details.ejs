@@ -41,7 +41,7 @@
   
   <div class="inner-row-1" style="justify-content: space-around;">
 
-    <div class="list-group" id = "group-of-lists" >
+    <div class="list-group" id = "group-of-lists">
     
       <% for(issue of project.issues){ %>
         <a  class="list-group-item list-group-item-action">
@@ -62,11 +62,12 @@
         <form id = "project-search" method="post" action="/project/search-project">
           <select class="form-select" aria-label="Default select example" name = "type">
             <option selected>Open this to select title or discription to search </option>
-            <option value="ProjectName">title of project</option>
+            <option value="title">title </option>
             <option value="discription">Discription</option>      
             <option value="author">Author</option>      
           </select>
           <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="type here to search" name = "search" required>
+          <input type = "hidden" name = "projectid" value="<%=project._id%>">
           <button type="submit" class="mb-5 btn btn-primary col-3" >submit</button>
         </form>
       </div>

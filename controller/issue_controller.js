@@ -3,8 +3,7 @@ const Project = require('../models/project');
 
 module.exports.CreateIssue = function(req,res){
     console.log(req.body.projectid);
-    Project.findOne({_id : req.body.projectid},function(err,projectData){
-        console.log(projectData);
+    Project.findOne({_id : req.body.projectid},function(err,projectData){        
         if(projectData){
             Issue.create({
 
