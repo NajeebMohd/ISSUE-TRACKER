@@ -7,16 +7,40 @@
     align-items: center;
     padding-top: 5%;
     padding-bottom: 5%;
+    /* background-color: orange; */
 
 }
 #project-detail{
     min-height: 40%;
     height: auto;
-    width: 70%;
+    width: 65%;
     border: 1px solid black;
     text-align: center;
 }
 #form-of-issues{
-    height: 40%;
-    width: 50%;
+    height: 30%;
+    width: 30%;
+    border: 1px solid black;
+}
+#form-of-issues{
+    display: flex;
+    justify-content: center;
+}
+#search-form{
+    border: 1px solid black;
+}
+#container>div{
+    margin-bottom: 70px;
+}
+.inner-row-1{
+    height: auto;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+#group-of-lists{
+    height: auto;
+    width: 60%;
 }

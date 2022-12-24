@@ -11,8 +11,10 @@
 #form-of-project{
     height: 40%;
     width: 40%;
-    /* border: 1px solid black; */
-    background-color: rgb(241, 241, 99);
+    
+    background-color: #fbffb1;
+    background-color: #fbfd86;
+    /* background-color: #031e2d; */
     border-radius: 1.2rem;
     display: flex;
     flex-direction: column;
