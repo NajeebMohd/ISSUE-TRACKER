@@ -100,3 +100,9 @@ footer{
     color:lightgoldenrodyellow;
     text-decoration: underline;
 }
+
+@media screen and (max-width:900px) {
+    footer{
+        padding-top: 25px;
+    }
+}

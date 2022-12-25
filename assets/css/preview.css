@@ -43,3 +43,20 @@ h2{
     font-weight: 500;    
     letter-spacing: 1px;
 }
+
+@media screen and (max-width:1200px) {
+    #form-of-project{
+        width: 60%;
+    }
+    #project-lists{
+        width: 65%;
+    }
+}
+@media screen and (max-width:760px) {
+    #form-of-project{
+        width: 90%;
+    }
+    #project-lists{
+        width: 95%;
+    }
+}

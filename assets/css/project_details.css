@@ -61,7 +61,7 @@
     width: 100%;
     display: flex;
     align-items: flex-start;
-    justify-content: space-between;
+    justify-content: space-between;    
 }
 
 #group-of-lists{
@@ -76,3 +76,41 @@
     border-radius: 1.2rem;
 }
 
+@media screen and (max-width:1020px) {
+    .inner-row-1{
+        flex-direction: column;
+        align-items: center;
+    }
+    #ir2{
+        flex-direction: column-reverse;
+    }
+    #project-detail{
+        width: 85%;
+        margin-bottom: 7%;
+    }
+    #form-of-issues{
+        width: 50%;
+    }
+    #search-form{
+        width: 50%;
+        margin-bottom: 7%;
+    }
+    #group-of-lists{
+        width:70%;
+    }
+}
+
+@media screen and (max-width:760px) {    
+    #project-detail{
+        width: 95%;
+    }
+    #form-of-issues{
+        width: 70%;
+    }
+    #search-form{
+        width: 70%;        
+    }
+    #group-of-lists{
+        width: 85%;
+    }
+}

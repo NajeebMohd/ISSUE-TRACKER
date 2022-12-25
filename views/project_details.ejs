@@ -11,9 +11,8 @@
         
       <p><b style="color: black;">Discription : </b><%= project.discription %></p>
         
-    </div>
+    </div>   
     
-    <div class = "brdr"></div>
   
     <div id = "form-of-issues" >
       <h4 style="margin-bottom:20px; margin-top: 10px;">Publish any issue here <i class="fa-sharp fa-solid fa-triangle-exclamation" style="color: red;"></i></h4>
@@ -42,7 +41,7 @@
   </div>
 
   
-  <div class="inner-row-1" >
+  <div class="inner-row-1" id = "ir2">
 
     <div class="list-group" id = "group-of-lists">
       <h4><i class="fa-solid fa-list-ol"></i> &nbsp; List of issues  </h4>
@@ -57,9 +56,7 @@
         </a>
       <% } %>
       
-    </div>
-
-    <div class = "brdr"></div>
+    </div>    
 
     <% if(project.issues.length > 0 ){ %>
       <div id = "search-form" >
