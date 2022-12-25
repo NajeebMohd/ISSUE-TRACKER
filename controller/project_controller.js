@@ -15,7 +15,7 @@ module.exports.CreateProject = function(req,res){
             });
         }
     });
-    res.redirect('back');        
+    return res.redirect('back');        
 }
 
 module.exports.ProjectDetails = function(req,res){    
@@ -25,7 +25,7 @@ module.exports.ProjectDetails = function(req,res){
     })
     .exec(function(err,project){
         if(err){console.log('error in finding the project -->>',err);return;}        
-        res.render('project_details',{
+        return res.render('project_details',{
             title : 'Project Details',
             project : project
         });
@@ -56,10 +56,11 @@ module.exports.SearchProject = function(req,res){
 
     )
     .exec(function(err,project){
+        //console.log(project);
         if(err){console.log('error in finding the project -->>',err);return;}
-        res.render('project_details',{
+        return res.render('project_details',{
             title : 'Project Details',
             project : project
         });        
     });
-}
+}//if no search result display no results

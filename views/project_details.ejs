@@ -55,6 +55,9 @@
           <small class="text-muted">issue created by <b>- <%= issue.author %></b> </small>
         </a>
       <% } %>
+      <% if(project.issues.length == 0){ %>
+        <h3 style="text-align: center; margin-top: 20px;"> <i class="fa-sharp fa-solid fa-file-excel"></i> No results !!!</h3>
+      <% }%>
       
     </div>    
 
@@ -73,7 +76,8 @@
           <button type="submit" class="mb-3 btn btn-primary col-3" >search</button>
         </form>
       </div>
-    <% } %> 
+    <% } %>
+    
     
 
   </div>
