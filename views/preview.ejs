@@ -23,13 +23,14 @@
   </form>
 
   <div id = "project-lists">
+    <h4> <i class="fa-solid fa-file-invoice"></i> &nbsp; Lists of projects</h4>
     <ul class="list-group">
       <% for(project of projects){ %>
 
         <a href="/project/project-details/<%=project.id%>">
-          <li class="list-group-item d-flex justify-content-between align-items-center">
+          <li class="list-group-item d-flex justify-content-between align-items-center liss">
             <%= project.ProjectName %>
-            <span class="badge bg-primary rounded-pill"><%= project.author %></span>
+            <span class="badge bg-danger rounded-pill"><%= project.issues.length %></span>
           </li>
         </a>        
 

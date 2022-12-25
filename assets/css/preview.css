@@ -27,8 +27,8 @@
     margin-top: 5%;
 }
 #project-lists li:hover{
-    background-color: gray;
-    /* border: 1px solid rgb(241, 241, 99); */
+    background-color: lightgray;
+    border: 1px solid black;
 }
 #project-lists a{
     text-decoration: none;
@@ -37,4 +37,9 @@
 h2{
     margin: 5px;
     text-decoration: underline;
+}
+.liss{
+    height: 62px;
+    font-weight: 500;    
+    letter-spacing: 1px;
 }
