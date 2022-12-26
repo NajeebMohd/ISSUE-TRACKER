@@ -45,6 +45,7 @@
 
     <div class="list-group" id = "group-of-lists">
       <h4><i class="fa-solid fa-list-ol"></i> &nbsp; List of issues  </h4>
+
       <% for(issue of project.issues){ %>
         <a  class="list-group-item list-group-item-action">
           <div class="d-flex w-100 justify-content-between">
@@ -55,30 +56,28 @@
           <small class="text-muted">issue created by <b>- <%= issue.author %></b> </small>
         </a>
       <% } %>
+
       <% if(project.issues.length == 0){ %>
         <h3 style="text-align: center; margin-top: 20px;"> <i class="fa-sharp fa-solid fa-file-excel"></i> No results !!!</h3>
       <% }%>
       
     </div>    
 
-    <% if(project.issues.length > 0 ){ %>
-      <div id = "search-form" >
-        <h4 style="margin-bottom:20px; margin-top: 10px;">Search any issue here <i class="fa-solid fa-magnifying-glass"></i></h4>
-        <form id = "project-search" method="post" action="/project/search-project">
-          <select class="form-select mb-3" aria-label="Default select example" name = "type">
-            <option selected>Click here to select title or discription to search </option>
-            <option value="title">title </option>
-            <option value="discription">Discription</option>      
-            <option value="author">Author</option>      
-          </select>
-          <input type="text" class="form-control mb-3" id="exampleFormControlInput1" placeholder="type here to search" name = "search" required>
-          <input type = "hidden" name = "projectid" value="<%=project._id%>">
-          <button type="submit" class="mb-3 btn btn-primary col-3" >search</button>
-        </form>
-      </div>
-    <% } %>
     
-    
+    <div id = "search-form" >
+      <h4 style="margin-bottom:20px; margin-top: 10px;">Search any issue here <i class="fa-solid fa-magnifying-glass"></i></h4>
+      <form id = "project-search" method="post" action="/project/search-project">
+        <select class="form-select mb-3" aria-label="Default select example" name = "type">
+          <option selected>Click here to select title or discription to search </option>
+          <option value="title">title </option>
+          <option value="discription">Discription</option>      
+          <option value="author">Author</option>      
+        </select>
+        <input type="text" class="form-control mb-3" id="exampleFormControlInput1" placeholder="type here to search" name = "search" required>
+        <input type = "hidden" name = "projectid" value="<%=project._id%>">
+        <button type="submit" class="mb-3 btn btn-primary col-3" >search</button>
+      </form>
+    </div>    
 
   </div>
     

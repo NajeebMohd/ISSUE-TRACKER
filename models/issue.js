@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 const issueSchema = new mongoose.Schema({
     title:{
         type : String,
-        required : true,        
+        required : true,
+        unique : false        
     },
     author : {
         type : String,
