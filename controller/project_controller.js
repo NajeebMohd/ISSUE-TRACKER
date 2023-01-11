@@ -56,7 +56,7 @@ module.exports.SearchProject = function(req,res){
 
     )
     .exec(function(err,project){
-        //console.log(project);
+        // console.log(project);
         if(err){console.log('error in finding the project -->>',err);return;}
         return res.render('project_details',{
             title : 'Project Details',
