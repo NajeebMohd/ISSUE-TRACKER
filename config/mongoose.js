@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://127.0.0.1/Issue_Tracker');
+mongoose.connect('mongodb://127.0.0.1:27017/Issue_Tracker');
 
 const db = mongoose.connection;
 
