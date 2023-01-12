@@ -9,6 +9,7 @@ const session = require('express-session');
 const passport = require('passport');
 const passportLocal = require('./config/passport-local-strategy');
 const passportGoogle = require('./config/passport-google-oauth-strategy');
+const MongoStore = require('connect-mongo');
 
 
 app.use(expressLayouts);
@@ -34,7 +35,17 @@ app.use(session({
     resave : false,
     cookie : {
         maxAge : (1000 * 60 * 10)
-    }
+    },
+    store:MongoStore.create(
+        {
+            mongoUrl : process.env.mongodburl,
+            autoRemove : 'Disabled',
+            mongoOptions : {}
+        },
+        function(err){
+            console.log(err || 'connect mongodb connect ok');
+        }
+    )
 }));
 
 app.use(passport.initialize());

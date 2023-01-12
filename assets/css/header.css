@@ -15,3 +15,6 @@
 .navbar-nav a {
     border-radius: 0.7rem;
 }
+#navicon{
+    border : 2px solid white;    
+}
