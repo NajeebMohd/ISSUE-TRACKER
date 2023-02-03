@@ -6,5 +6,10 @@
 
 ## Here's what the feauture include
 <ul>
-  <li>User login/logout </li>
+  <li>User login/logout and Create a Account</li>
+  <li>User can Create a project </li>
+  <li>Create any issues to the project </li>
+  <li>User can filter any issues of a project </li>
 </ul>
+
+## Samples Images
